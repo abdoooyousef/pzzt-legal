@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pzzt! — Privacy Policy | سياسة الخصوصية</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo">⚡</div>
+  <h1>Pzzt!</h1>
+  <div class="sub">Privacy Policy · سياسة الخصوصية</div>
+  <div class="lang"><button id="btn-en" class="on" onclick="setLang('en')">English</button><button id="btn-ar" onclick="setLang('ar')">العربية</button></div>
+</header>
+
+<div id="en">
+  <p><em>Effective date: July 6, 2026</em></p>
+  <h2>What we collect</h2>
+  <ul>
+    <li><strong>Account info</strong>: a display name you choose; optionally an email (if you register or link an account) — guests need no personal data at all.</li>
+    <li><strong>App data</strong>: groups you create or join, the alerts ("Pzzts") you send, and scheduled alerts.</li>
+    <li><strong>Device token</strong>: a push-notification token so alerts can reach your device.</li>
+  </ul>
+  <h2>What we do NOT collect</h2>
+  <ul>
+    <li>No contacts, no location, no phone number, no message content (Pzzt sends signals, not messages).</li>
+    <li>No selling or sharing of your data with third parties for marketing.</li>
+  </ul>
+  <h2>Ads</h2>
+  <p>The app shows optional rewarded ads via Google AdMob. AdMob may process device identifiers for ad delivery under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. Watching ads is always your choice.</p>
+  <h2>Where your data lives</h2>
+  <p>Your data is stored on our own servers. Push notifications are delivered through Firebase Cloud Messaging (delivery only).</p>
+  <h2>Data deletion</h2>
+  <p>You can permanently delete your account and all associated data anytime from <strong>Settings → Account → Delete My Account</strong>, or by following <a href="delete-account.html">the account-deletion steps</a>.</p>
+  <h2>Contact</h2>
+  <div class="card">AYN Developer — <a href="mailto:ayn.developer@gmail.com">ayn.developer@gmail.com</a></div>
+</div>
+
+<div id="ar" class="hidden" dir="rtl">
+  <p><em>تاريخ السريان: 6 يوليو 2026</em></p>
+  <h2>البيانات اللي بنجمعها</h2>
+  <ul>
+    <li><strong>بيانات الحساب</strong>: اسم ظاهر بتختاره؛ وإيميل اختياريًا (لو سجّلت أو ربطت حسابك) — الضيوف مش محتاجين أي بيانات شخصية خالص.</li>
+    <li><strong>بيانات التطبيق</strong>: الجروبات اللي بتنشئها أو بتنضم لها، والتنبيهات ("Pzzt") اللي بتبعتها، والتنبيهات المجدولة.</li>
+    <li><strong>توكن الجهاز</strong>: توكن الإشعارات عشان التنبيهات توصل لجهازك.</li>
+  </ul>
+  <h2>اللي مش بنجمعه</h2>
+  <ul>
+    <li>لا جهات اتصال، لا موقع جغرافي، لا رقم تليفون، لا محتوى رسائل (Pzzt بيبعت إشارات مش رسايل).</li>
+    <li>مفيش بيع أو مشاركة لبياناتك مع أي طرف تالت لأغراض تسويقية.</li>
+  </ul>
+  <h2>الإعلانات</h2>
+  <p>التطبيق بيعرض إعلانات مكافئة اختيارية عبر Google AdMob. ممكن AdMob تعالج معرّفات الجهاز لعرض الإعلانات وفق <a href="https://policies.google.com/privacy">سياسة خصوصية Google</a>. مشاهدة الإعلانات دايمًا اختيارك.</p>
+  <h2>مكان تخزين بياناتك</h2>
+  <p>بياناتك متخزنة على سيرفراتنا الخاصة. الإشعارات بتتوصّل عبر Firebase Cloud Messaging (توصيل فقط).</p>
+  <h2>حذف البيانات</h2>
+  <p>تقدر تحذف حسابك وكل بياناته نهائيًا في أي وقت من <strong>الإعدادات ← الحساب ← حذف حسابي</strong>، أو باتباع <a href="delete-account.html">خطوات حذف الحساب</a>.</p>
+  <h2>التواصل</h2>
+  <div class="card">AYN Developer — <a href="mailto:ayn.developer@gmail.com">ayn.developer@gmail.com</a></div>
+</div>
+
+<footer>© 2026 AYN Developer · Pzzt!</footer>
+</div>
+<script>
+function setLang(l){
+  document.getElementById('en').classList.toggle('hidden', l!=='en');
+  document.getElementById('ar').classList.toggle('hidden', l!=='ar');
+  document.getElementById('btn-en').classList.toggle('on', l==='en');
+  document.getElementById('btn-ar').classList.toggle('on', l==='ar');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pzzt! — Terms of Service | شروط الاستخدام</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo">⚡</div>
+  <h1>Pzzt!</h1>
+  <div class="sub">Terms of Service · شروط الاستخدام</div>
+  <div class="lang"><button id="btn-en" class="on" onclick="setLang('en')">English</button><button id="btn-ar" onclick="setLang('ar')">العربية</button></div>
+</header>
+
+<div id="en">
+  <p><em>Effective date: July 6, 2026</em></p>
+  <h2>The service</h2>
+  <p>Pzzt! lets you create/join groups and send instant one-tap alerts ("Pzzts") to group members. The service is provided as-is, free of charge, supported by optional rewarded ads.</p>
+  <h2>Acceptable use</h2>
+  <ul>
+    <li>Don't use Pzzt! to harass, spam, or annoy people who don't want your alerts. Members can leave any group at any time.</li>
+    <li>Don't attempt to abuse, reverse-engineer, or manipulate the credit/reward system.</li>
+    <li>You are responsible for what you name your groups and custom alerts.</li>
+  </ul>
+  <h2>Accounts</h2>
+  <p>Guest accounts live on your device — deleting the app may lose a guest account permanently. Link an email in Settings to keep your account. We may remove accounts that violate these terms.</p>
+  <h2>Credits &amp; ads</h2>
+  <p>Daily free allowances, earned credits, and rewards have no monetary value, can't be transferred or refunded, and may be adjusted to keep the service fair.</p>
+  <h2>Liability</h2>
+  <p>The service is provided without warranties of any kind. We are not liable for missed or delayed notifications — delivery depends on your device, network, and platform push services.</p>
+  <h2>Changes</h2>
+  <p>We may update these terms; continued use after an update means you accept the new terms.</p>
+  <h2>Contact</h2>
+  <div class="card">AYN Developer — <a href="mailto:ayn.developer@gmail.com">ayn.developer@gmail.com</a></div>
+</div>
+
+<div id="ar" class="hidden" dir="rtl">
+  <p><em>تاريخ السريان: 6 يوليو 2026</em></p>
+  <h2>الخدمة</h2>
+  <p>Pzzt! بيخليك تنشئ/تنضم لجروبات وتبعت تنبيهات فورية بضغطة واحدة ("Pzzt") لأعضاء الجروب. الخدمة مقدمة كما هي، مجانًا، ومدعومة بإعلانات مكافئة اختيارية.</p>
+  <h2>الاستخدام المقبول</h2>
+  <ul>
+    <li>متستخدمش Pzzt! للمضايقة أو الإزعاج أو السبام لحد مش عايز تنبيهاتك. أي عضو يقدر يسيب أي جروب في أي وقت.</li>
+    <li>ممنوع محاولة استغلال أو التلاعب بنظام الكريديت/المكافآت.</li>
+    <li>إنت مسؤول عن أسماء جروباتك وتنبيهاتك المخصصة.</li>
+  </ul>
+  <h2>الحسابات</h2>
+  <p>حساب الضيف بيعيش على جهازك — مسح التطبيق ممكن يضيعه نهائيًا. اربط إيميل من الإعدادات عشان تحتفظ بحسابك. من حقنا نشيل الحسابات المخالفة للشروط دي.</p>
+  <h2>الكريديت والإعلانات</h2>
+  <p>الرصيد اليومي المجاني والكريديت المكتسب والمكافآت ملهاش قيمة مالية، ومش قابلة للتحويل أو الاسترداد، وممكن تتعدل للحفاظ على عدالة الخدمة.</p>
+  <h2>المسؤولية</h2>
+  <p>الخدمة مقدمة من غير أي ضمانات. مش مسؤولين عن تأخر أو عدم وصول الإشعارات — التوصيل بيعتمد على جهازك وشبكتك وخدمات الإشعارات بتاعة المنصة.</p>
+  <h2>التعديلات</h2>
+  <p>ممكن نحدّث الشروط دي؛ استمرارك في الاستخدام بعد التحديث معناه قبولك للشروط الجديدة.</p>
+  <h2>التواصل</h2>
+  <div class="card">AYN Developer — <a href="mailto:ayn.developer@gmail.com">ayn.developer@gmail.com</a></div>
+</div>
+
+<footer>© 2026 AYN Developer · Pzzt!</footer>
+</div>
+<script>
+function setLang(l){
+  document.getElementById('en').classList.toggle('hidden', l!=='en');
+  document.getElementById('ar').classList.toggle('hidden', l!=='ar');
+  document.getElementById('btn-en').classList.toggle('on', l==='en');
+  document.getElementById('btn-ar').classList.toggle('on', l==='ar');
+}
+</script>
+</body>
+</html>

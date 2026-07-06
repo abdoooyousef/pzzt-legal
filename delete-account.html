@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pzzt! — Delete Your Account | حذف الحساب</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo">⚡</div>
+  <h1>Pzzt!</h1>
+  <div class="sub">Delete Your Account · حذف الحساب</div>
+  <div class="lang"><button id="btn-en" class="on" onclick="setLang('en')">English</button><button id="btn-ar" onclick="setLang('ar')">العربية</button></div>
+</header>
+
+<div id="en">
+  <h2>Delete from inside the app (instant)</h2>
+  <div class="card">
+    <ol>
+      <li>Open <strong>Pzzt!</strong></li>
+      <li>Go to <strong>Settings</strong> (⚙️)</li>
+      <li>Scroll to <strong>Account → Delete My Account</strong></li>
+      <li>Confirm — your account and all data are permanently deleted</li>
+    </ol>
+  </div>
+  <h2>What gets deleted</h2>
+  <ul>
+    <li>Your profile (name, email, photo)</li>
+    <li>Your group memberships (groups you own are deleted too)</li>
+    <li>Your alert history, scheduled alerts, counters and credits</li>
+    <li>Your push-notification token</li>
+  </ul>
+  <p>Deletion is permanent and cannot be undone. No data is retained after deletion.</p>
+  <h2>Can't access the app?</h2>
+  <p>Email us from any address and we'll delete your account within 30 days:</p>
+  <div class="card">AYN Developer — <a href="mailto:ayn.developer@gmail.com?subject=Pzzt!%20Account%20Deletion%20Request">ayn.developer@gmail.com</a><br>Subject: <em>Pzzt! Account Deletion Request</em> — include the display name/email you used.</div>
+</div>
+
+<div id="ar" class="hidden" dir="rtl">
+  <h2>الحذف من جوه التطبيق (فوري)</h2>
+  <div class="card">
+    <ol>
+      <li>افتح <strong>!Pzzt</strong></li>
+      <li>ادخل على <strong>الإعدادات</strong> (⚙️)</li>
+      <li>انزل لـ <strong>الحساب ← حذف حسابي</strong></li>
+      <li>أكّد — حسابك وكل بياناتك بيتحذفوا نهائيًا</li>
+    </ol>
+  </div>
+  <h2>اللي بيتحذف</h2>
+  <ul>
+    <li>ملفك الشخصي (الاسم، الإيميل، الصورة)</li>
+    <li>عضوياتك في الجروبات (الجروبات اللي إنت مالكها بتتحذف كمان)</li>
+    <li>سجل تنبيهاتك، التنبيهات المجدولة، العدادات والكريديت</li>
+    <li>توكن الإشعارات بتاع جهازك</li>
+  </ul>
+  <p>الحذف نهائي ومش قابل للتراجع. مفيش أي بيانات بتتحفظ بعد الحذف.</p>
+  <h2>مش قادر تدخل التطبيق؟</h2>
+  <p>ابعتلنا إيميل من أي عنوان وهنحذف حسابك خلال 30 يوم:</p>
+  <div class="card">AYN Developer — <a href="mailto:ayn.developer@gmail.com?subject=Pzzt!%20Account%20Deletion%20Request">ayn.developer@gmail.com</a><br>الموضوع: <em>Pzzt! Account Deletion Request</em> — اكتب الاسم/الإيميل اللي كنت مستخدمه.</div>
+</div>
+
+<footer>© 2026 AYN Developer · Pzzt!</footer>
+</div>
+<script>
+function setLang(l){
+  document.getElementById('en').classList.toggle('hidden', l!=='en');
+  document.getElementById('ar').classList.toggle('hidden', l!=='ar');
+  document.getElementById('btn-en').classList.toggle('on', l==='en');
+  document.getElementById('btn-ar').classList.toggle('on', l==='ar');
+}
+</script>
+</body>
+</html>
