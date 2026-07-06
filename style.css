@@ -16,3 +16,5 @@ a{color:var(--accent)}
 footer{margin-top:48px;text-align:center;color:var(--dim);font-size:13px;border-top:1px solid #2a2a4a;padding-top:24px}
 [dir=rtl] body{font-family:'Segoe UI',Tahoma,Arial,sans-serif}
 .hidden{display:none}
+
+.logo-img{width:88px;height:88px;border-radius:22px;box-shadow:0 8px 30px rgba(124,92,255,.35)}
