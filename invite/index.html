@@ -81,9 +81,10 @@
     e.preventDefault(); openApp();
   });
 
-  // NFC tap lands here → try to open the app immediately (small delay so the
-  // page paints first and the fallback timer behaves)
-  if (code && (isAndroid || isIOS)) setTimeout(openApp, 350);
+  // NFC/QR tap lands here → redirect IMMEDIATELY (app if installed, else the
+  // store). The page itself is just a flash + manual fallback if redirects
+  // are blocked.
+  if (code && (isAndroid || isIOS)) openApp();
 })();
 </script>
 </body>
