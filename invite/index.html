@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pzzt! — Join Group</title>
+<link rel="icon" type="image/png" href="../logo.png">
+<style>
+  :root { --bg:#0e0b1e; --card:#1a1530; --primary:#8B5CF6; --text:#f4f2ff; --muted:#a79fc9; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%, #241a4d 0%, var(--bg) 60%);
+    color:var(--text); min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px;
+  }
+  .card { background:var(--card); border:1px solid rgba(139,92,246,.25); border-radius:24px;
+    padding:36px 28px; max-width:420px; width:100%; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,.45); }
+  .logo { width:88px; height:88px; border-radius:22px; margin-bottom:18px; }
+  h1 { font-size:26px; margin-bottom:6px; }
+  .sub { color:var(--muted); font-size:14.5px; line-height:1.6; margin-bottom:22px; }
+  .code { display:inline-block; letter-spacing:6px; font-weight:800; font-size:26px;
+    background:rgba(139,92,246,.14); border:1px dashed rgba(139,92,246,.5);
+    border-radius:14px; padding:12px 18px; margin-bottom:26px; }
+  .btn { display:block; width:100%; padding:15px 16px; border-radius:14px; font-size:16px; font-weight:700;
+    text-decoration:none; margin-bottom:12px; transition:transform .15s; cursor:pointer; }
+  .btn:active { transform:scale(.97); }
+  .btn-primary { background:linear-gradient(135deg,#8B5CF6,#EC4899); color:#fff; }
+  .btn-store { background:rgba(255,255,255,.07); color:var(--text); border:1px solid rgba(255,255,255,.14); }
+  .hint { color:var(--muted); font-size:12.5px; margin-top:10px; }
+  .ar { direction:rtl; }
+</style>
+</head>
+<body>
+<div class="card">
+  <img class="logo" src="../logo.png" alt="Pzzt!">
+  <h1>Pzzt! Invitation 🎉</h1>
+  <p class="sub">You've been invited to a Pzzt! group.<br>
+     <span class="ar">تمت دعوتك لجروب على Pzzt!</span></p>
+  <div class="code" id="codeBox">— — — —</div>
+  <a class="btn btn-primary" id="openBtn" href="#">Open in Pzzt! · افتح التطبيق</a>
+  <a class="btn btn-store" id="playBtn"
+     href="https://play.google.com/store/apps/details?id=com.abdoooyousef.pzzt">Get it on Google Play</a>
+  <a class="btn btn-store" id="iosBtn"
+     href="https://apps.apple.com/app/pzzt/id0000000000">Download on the App Store</a>
+  <p class="hint">If the app is installed it will open automatically ·
+     <span class="ar">لو التطبيق موجود هيفتح لوحده</span></p>
+</div>
+<script>
+(function () {
+  var params = new URLSearchParams(location.search);
+  var code = (params.get('c') || params.get('code') || '').replace(/[^A-Za-z0-9]/g, '').toUpperCase();
+  var isAndroid = /android/i.test(navigator.userAgent);
+  var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  var play = 'https://play.google.com/store/apps/details?id=com.abdoooyousef.pzzt';
+  var appstore = 'https://apps.apple.com/app/pzzt/id0000000000';
+
+  if (code) document.getElementById('codeBox').textContent = code.split('').join(' ');
+
+  // Hide the irrelevant store button per-platform
+  if (isAndroid) document.getElementById('iosBtn').style.display = 'none';
+  if (isIOS) document.getElementById('playBtn').style.display = 'none';
+
+  function openApp() {
+    if (!code) return;
+    if (isAndroid) {
+      // intent:// auto-opens the app if installed, else falls back to Play Store
+      location.href = 'intent://join/' + code +
+        '#Intent;scheme=pzzt;package=com.abdoooyousef.pzzt;S.browser_fallback_url=' +
+        encodeURIComponent(play) + ';end';
+    } else if (isIOS) {
+      // Try the custom scheme; if nothing handles it, go to the App Store
+      var t = Date.now();
+      location.href = 'pzzt://join/' + code;
+      setTimeout(function () {
+        if (Date.now() - t < 1600 && !document.hidden) location.href = appstore;
+      }, 1200);
+    }
+  }
+
+  document.getElementById('openBtn').addEventListener('click', function (e) {
+    e.preventDefault(); openApp();
+  });
+
+  // NFC tap lands here → try to open the app immediately (small delay so the
+  // page paints first and the fallback timer behaves)
+  if (code && (isAndroid || isIOS)) setTimeout(openApp, 350);
+})();
+</script>
+</body>
+</html>
